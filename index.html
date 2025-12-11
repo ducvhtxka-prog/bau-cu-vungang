@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuyên trang thông tin bầu cử tri Phường Vũng Áng</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            line-height: 1.6;
+        }
+        header img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #d32f2f;
+            padding: 12px 20px;
+            flex-wrap: wrap;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 15px;
+        }
+        nav a:hover { opacity: 0.8; }
+        .login-btn {
+            background-color: #b71c1c;
+            padding: 10px 30px;
+            border-radius: 5px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        h1 {
+            text-align: center;
+            color: #d32f2f;
+            margin: 20px 0;
+            font-size: 2.2em;
+        }
+        .countdown-container {
+            max-width: 500px;
+            margin: 30px auto;
+            background: linear-gradient(135deg, #ff4081, #f50057);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        #countdown {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+        .time-block {
+            background: #c62828;
+            padding: 12px;
+            border-radius: 8px;
+            min-width: 80px;
+        }
+        .time-block div:first-child {
+            font-size: 32px;
+            font-weight: bold;
+        }
+        .boxes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .box {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            text-decoration: none;
+            color: inherit;
+        }
+        .box:hover { transform: translateY(-8px); }
+        .box-content {
+            padding: 20px;
+            text-align: center;
+        }
+        .box h3 {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+        .box p {
+            margin: 0;
+            font-size: 14px;
+            font-weight: bold;
+            color: #fff;
+        }
+        footer {
+            background: #d32f2f;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 50px;
+            font-size: 14px;
+        }
+        @media (max-width: 768px) {
+            nav { flex-direction: column; gap: 15px; }
+            nav ul { justify-content: center; }
+            h1 { font-size: 1.8em; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Banner -->
+    <header>
+        <img src="BANNE.png" alt="Banner bầu cử Phường Vũng Áng">
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#">Trang chủ</a></li>
+            <li><a href="#tin-tuc">Tin tức bầu cử</a></li>
+            <li><a href="#ung-cu">Người ứng cử</a></li>
+            <li><a href="#trung-cu">Người trúng cử</a></li>
+            <li><a href="#de-cu">Đề cử</a></li>
+            <li><a href="#so-tay">Sổ tay bầu cử</a></li>
+        </ul>
+        <a href="admin-login.html" class="login-btn">Đăng nhập Admin</a>
+    </nav>
+
+    <!-- Tiêu đề chính -->
+    <h1>THÔNG TIN BẦU CỬ QUỐC HỘI HĐND PHƯỜNG VŨNG ÁNG</h1>
+
+    <!-- Countdown đến ngày bầu cử -->
+    <div class="countdown-container">
+        <h2 style="margin: 0 0 10px 0;">CÒN LẠI ĐẾN NGÀY BẦU CỬ</h2>
+        <div id="countdown">
+            <div class="time-block"><div id="days">00</div><div>ngày</div></div>
+            <div class="time-block"><div id="hours">00</div><div>giờ</div></div>
+            <div class="time-block"><div id="minutes">00</div><div>phút</div></div>
+            <div class="time-block"><div id="seconds">00</div><div>giây</div></div>
+        </div>
+    </div>
+
+    <!-- Các ô chức năng -->
+    <div class="boxes">
+        <a href="#muc2" class="box" style="background: linear-gradient(135deg, #42a5f5, #64b5f6);">
+    <div class="box-content" style="text-align:center;">
+        <span class="material-icons" style="font-size:80px; color:#fff; margin-bottom:10px; display:block;">article</span>
+        <h3 style="color:#fff;">TIN TỨC</h3>
+        <p style="color:#fff;">Thông tin mới nhất</p>
+    </div>
+</a>
+
+       <a href="#muc1" class="box" style="background: linear-gradient(135deg, #8e24aa, #ab47bc);">
+    <div class="box-content" style="text-align:center;">
+        <span class="material-icons" style="font-size:80px; color:#fff; margin-bottom:10px; display:block;">person</span>
+        <h3 style="color:#fff;">NGƯỜI ỨNG CỬ / ĐỀ CỬ</h3>
+        <p style="color:#fff;">Danh sách ứng cử viên chính thức</p>
+    </div>
+</a>
+
+             <a href="#trung-cu" class="box" style="background: linear-gradient(135deg, #ec407a, #f06292);">
+    <div class="box-content" style="text-align:center;">
+
+        <span class="material-icons" 
+              style="font-size:80px; color:#ffffff; margin-bottom:10px; display:block;">
+            person
+        </span>
+
+        <h3 style="color:#fff;">NGƯỜI TRÚNG CỬ</h3>
+        <p style="color:#fff;">Kết quả bầu cử chính thức</p>
+    </div>
+</a>
+
+
+      <a href="#muc1" class="box" style="background: linear-gradient(135deg, #ffa726, #fb8c00);">
+    <div class="box-content" style="text-align:center;">
+        <span class="material-icons" style="font-size:80px; color:#fff; margin-bottom:10px; display:block;">book</span>
+        <h3 style="color:#fff;">SỔ TAY BẦU CỬ</h3> 
+        <p style="color:#fff;">Hướng dẫn chi tiết quy trình</p> 
+    </div>
+</a>
+
+
+    <a href="#muc1" class="box" style="background: linear-gradient(135deg, #66bb6a, #43a047);">
+    <div class="box-content" style="text-align:center;">
+        <span class="material-icons" style="font-size:80px; color:#fff; margin-bottom:10px; display:block;">menu_book</span>
+        <h3 style="color:#fff;">HƯỚNG DẪN BẦU CỬ</h3> 
+        <p style="color:#fff;">Hướng dẫn chi tiết quy trình</p> 
+    </div>
+</a>
+
+
+
+       <a href="#hoi-dap" class="box" style="background: linear-gradient(135deg, #26c6da, #00acc1);">
+    <div class="box-content" style="text-align:center;">
+        <span class="material-icons" style="font-size:80px; color:#fff; margin-bottom:10px; display:block;">help</span>
+        <h3 style="color:#fff;">HỎI ĐÁP</h3>
+        <p style="color:#fff;">Giải đáp thắc mắc phổ biến</p>
+    </div>
+</a>
+
+
+       <a href="#van-ban" class="box" style="background: linear-gradient(135deg, #3949ab, #5c6bc0);">
+    <div class="box-content" style="text-align:center;">
+        <span class="material-icons" style="font-size:80px; color:#fff; margin-bottom:10px; display:block;">description</span>
+        <h3 style="color:#fff;">VĂN BẢN PHÁP LÝ</h3>
+        <p style="color:#fff;">Tài liệu, luật bầu cử liên quan</p>
+    </div>
+</a>
+<a href="#phan-anh" class="box" style="background: linear-gradient(135deg, #cddc39, #afb42b);">
+    <div class="box-content" style="text-align:center;">
+        <span class="material-icons" style="font-size:80px; color:#fff; margin-bottom:10px; display:block;">campaign</span>
+        <h3 style="color:#fff;">PHẢN ÁNH – KIẾN NGHỊ</h3>
+        <p style="color:#fff;">Ghi nhận ý kiến và thông tin từ cử tri</p>
+    </div>
+</a>
+</div>   <!-- đóng container của các box -->
+
+<footer style="background:#d32f2f; width:100%; text-align:center; padding:6px 0; color:#fff; font-size:14px;">
+    <p><strong>Phường Vũng Áng - Tỉnh Hà Tĩnh</strong></p>
+    <p>Hỗ trợ kỹ thuật: 0966801427 (Công Đức QTV)</p>
+    <p>&copy; 2025 - Bản quyền thuộc UBND Phường Vũng Áng</p>
+</footer>
+
+
+    <!-- Script Countdown - Ngày bầu cử: 15/03/2026 -->
+    <script>
+        // Đặt ngày bầu cử chính thức
+        const electionDate = new Date("2026-03-15T00:00:00+07:00").getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = electionDate - now;
+
+            if (distance < 0) {
+                document.getElementById("countdown").innerHTML = "<p style='font-size:20px; color:yellow;'>BẦU CỬ ĐÃ DIỄN RA!</p>";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").textContent = days;
+            document.getElementById("hours").textContent = hours;
+            document.getElementById("minutes").textContent = minutes;
+            document.getElementById("seconds").textContent = seconds;
+        }
+
+        // Cập nhật ngay lập tức và mỗi giây
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    </script>
+</body>
+</html>

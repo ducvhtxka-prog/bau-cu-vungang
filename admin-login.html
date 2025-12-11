@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Đăng nhập Admin</title>
+    <style>
+        body { font-family: Arial; text-align: center; padding: 50px; background: #f4f4f4; }
+        form { max-width: 300px; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        input { width: 100%; padding: 10px; margin: 10px 0; }
+        button { background: #ff0000; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h2>Đăng nhập Quản trị / Biên tập</h2>
+    <form id="loginForm">
+        <input type="text" id="username" placeholder="Tên đăng nhập" required>
+        <input type="password" id="password" placeholder="Mật khẩu" required>
+        <button type="submit">Đăng nhập</button>
+    </form>
+
+    <script>
+        document.getElementById('loginForm').onsubmit = function(e) {
+            e.preventDefault();
+            const user = document.getElementById('username').value;
+            const pass = document.getElementById('password').value;
+            if ((user === 'admin' && pass === 'admin123') || (user === 'bientap' && pass === 'bientap123')) {
+                localStorage.setItem('loggedIn', 'true');
+                localStorage.setItem('role', user === 'admin' ? 'admin' : 'editor');
+                window.location.href = 'bau-cu-vungang.html'; // Thay tên file trang chính của bạn nếu khác
+            } else {
+                alert('Sai tên hoặc mật khẩu');
+            }
+        };
+    </script>
+</body>
+</html>
